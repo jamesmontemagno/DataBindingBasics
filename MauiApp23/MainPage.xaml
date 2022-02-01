@@ -1,0 +1,35 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp23.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ScrollView>
+        <VerticalStackLayout 
+              Padding="60">
+
+           <Entry Placeholder ="First Name"
+				  PlaceholderColor ="#460e56"
+				  Text="{Binding firstName}"/>
+
+			<Entry Placeholder ="First Name"
+				  PlaceholderColor ="#460e56"
+				  Text="{Binding lastName}"/>
+			
+			<Entry Placeholder ="First Name"
+				  PlaceholderColor ="#460e56"
+				  Text="{Binding mail}"/>
+			
+			<Entry Placeholder ="First Name"
+				   PlaceholderColor ="#460e56"
+                   IsPassword="True"
+				  Text="{Binding password}"/>
+			
+            <Button 
+                Text="Add Person"
+                FontAttributes="Bold"
+                Command="{Binding PostPeople}"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
