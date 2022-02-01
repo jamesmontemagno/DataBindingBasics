@@ -25,7 +25,7 @@ public  class PersonPageViewModel
     {
         //Submit new user to database
         var newUser = new Person();
-        newUser.SetProperty("login", firstName);
-        newUser.Password = password;
+        //newUser.SetProperty("login", firstName);
+        //newUser.Password = password;
     }
 }
