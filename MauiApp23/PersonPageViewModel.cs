@@ -23,6 +23,9 @@ public  class PersonPageViewModel
     public ICommand PostPeople { get; }
     public static void AddPerson()
     {
-
+        //Submit new user to database
+        var newUser = new Person();
+        newUser.SetProperty("login", firstName);
+        newUser.Password = password;
     }
 }
