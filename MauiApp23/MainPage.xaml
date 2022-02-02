@@ -1,6 +1,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp23.MainPage"
+             xmlns:local="clr-namespace:MauiApp23"
+             x:DataType="local:PersonPageViewModel"
              BackgroundColor="{DynamicResource SecondaryColor}">
 
     <ScrollView>
@@ -9,20 +11,23 @@
 
            <Entry Placeholder ="First Name"
 				  PlaceholderColor ="#460e56"
-				  Text="{Binding firstName}"/>
+				  Text="{Binding Person.FirstName}"/>
 
-			<Entry Placeholder ="First Name"
+            <Label Text="{Binding Person.FirstName}"
+				  TextColor ="#460e56"/>
+
+            <Entry Placeholder ="Last Name"
 				  PlaceholderColor ="#460e56"
-				  Text="{Binding lastName}"/>
+				  Text="{Binding Person.LastName}"/>
 			
-			<Entry Placeholder ="First Name"
+			<Entry Placeholder ="Email"
 				  PlaceholderColor ="#460e56"
-				  Text="{Binding mail}"/>
+				  Text="{Binding Person.Email}"/>
 			
-			<Entry Placeholder ="First Name"
+			<Entry Placeholder ="Password"
 				   PlaceholderColor ="#460e56"
                    IsPassword="True"
-				  Text="{Binding password}"/>
+				  Text="{Binding Person.Password}"/>
 			
             <Button 
                 Text="Add Person"

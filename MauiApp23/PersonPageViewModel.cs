@@ -1,31 +1,26 @@
-﻿using System.Windows.Input;
+﻿using System.ComponentModel;
+using System.Windows.Input;
 
 namespace MauiApp23;
 
-public  class PersonPageViewModel
+public  class PersonPageViewModel : INotifyPropertyChanged
 {
+    public Person Person { get; } = new Person();
     public PersonPageViewModel()
     {
-        PostPeople = new Command(AddPerson);
-
-        var People = new Person()
-        {
-            FirstName = firstName,
-            LastName = lastName,
-            Email = mail,
-            Password = password
-        };
+        PostPeople = new Command(AddPerson);        
     }
-    public string firstName;
-    public string lastName;
-    public string mail;
-    public string password;
+
     public ICommand PostPeople { get; }
-    public static void AddPerson()
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    void OnPropertyChanged(string name) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
+    public void AddPerson()
     {
-        //Submit new user to database
-        var newUser = new Person();
-        //newUser.SetProperty("login", firstName);
-        //newUser.Password = password;
+        //add to database!
+        Person.ClearFields();
     }
 }
